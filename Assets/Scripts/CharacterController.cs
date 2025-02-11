@@ -36,6 +36,8 @@ public class CharacterController : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
 
+
+
         if (move != 0 && (chassis.canCrouchWalk || !crouch))
         {
             rb.linearVelocity = new Vector2(move * chassis.speed * run, rb.linearVelocityY);
@@ -44,13 +46,25 @@ public class CharacterController : MonoBehaviour
             {
                 charge = -1 * Time.deltaTime;
             }
+
             animator.SetBool("Moving", true);
+
         }
 
         else if (chassis.canCrouchWalk)
         {   
             rb.linearVelocityX = 0;
             animator.SetBool("Moving", false);
+        }
+
+        if (crouch)
+        {
+            animator.SetBool("Crouch", true);
+        }
+
+        else
+        {
+            animator.SetBool("Crouch", false);
         }
     }
 
