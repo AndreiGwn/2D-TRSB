@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cool Text - HP 476373272706410_0: -2088559829056846056
+      Cool Text - HP 476373272706410_1: 2964719031698489219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
