@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     private Chassis chassis;
-    private int run;
+    
     private Rigidbody2D rb;
     private Collider2D collider;
 
@@ -20,12 +20,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            run = 2;
+            characterController.run = 2;
         }
 
         else
         {
-            run = 1;
+            characterController.run = 1;
         }
 
         if (Input.GetKeyDown("space"))
@@ -37,17 +37,21 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            characterController.crouch = true;
+        }
+
+        else
+        {
+            characterController.crouch = false;
+        }
+
+        characterController.move = Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * characterController.chassis.speed * run, rb.linearVelocity.y);
-
-        if (run == 2) 
-        {
-            characterController.charge =- 1 * Time.deltaTime;
-        }
-
 
     }
 }
