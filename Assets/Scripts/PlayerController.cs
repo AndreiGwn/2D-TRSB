@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     private Chassis chassis;
-    
+    private int run;
     private Rigidbody2D rb;
     private Collider2D collider;
 
@@ -20,12 +20,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            characterController.run = 2;
+            run = 2;
         }
 
         else
         {
-            characterController.run = 1;
+            run = 1;
         }
 
         if (Input.GetKeyDown("space"))
@@ -37,21 +37,33 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetAxisRaw("Vertical") < 0)
-        {
-            characterController.crouch = true;
-        }
-
-        else
-        {
-            characterController.crouch = false;
-        }
-
-        characterController.move = Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate()
     {
+        float moveDirection = Input.GetAxisRaw("Horizontal");
+        rb.linearVelocity = new Vector2(moveDirection * characterController.chassis.speed * run, rb.linearVelocity.y);
 
+        if (run == 2)
+        {
+            characterController.charge -= 1 * Time.deltaTime;
+        }
+
+        bool isMoving = moveDirection != 0;
+        GetComponent<Animator>().SetBool("Moving", isMoving);
+
+
+        GetComponent<Animator>().SetBool("Sprint", isMoving && run == 2);
+
+
+        if (moveDirection > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (moveDirection < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+
+        }
     }
-}
+    }

@@ -12,4 +12,4 @@ public class Chassis : ScriptableObject
     public bool arms;
     public bool canCrouch;
     public bool canCrouchWalk;
-}
+
