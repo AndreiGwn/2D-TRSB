@@ -6,7 +6,12 @@ public class CharacterController : MonoBehaviour
     public Rigidbody2D rb;
     public Transform groundCheck;
     public Collider2D collider;
+    private Animator animator;
     public bool grounded;
+
+    public float move;
+    public int run;
+    public bool crouch;
 
     public float health;
     public float charge;
@@ -14,12 +19,53 @@ public class CharacterController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        groundCheck = GetComponent<Transform>();
         collider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
-        Debug.Log(grounded);
+        if (rb.linearVelocityX < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        else if (rb.linearVelocityX > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+
+
+        if (move != 0 && (chassis.canCrouchWalk || !crouch))
+        {
+            rb.linearVelocity = new Vector2(move * chassis.speed * run, rb.linearVelocityY);
+
+            if (run == 2)
+            {
+                charge = -1 * Time.deltaTime;
+            }
+
+            animator.SetBool("Moving", true);
+
+        }
+
+        else if (chassis.canCrouchWalk)
+        {
+            rb.linearVelocityX = 0;
+            animator.SetBool("Moving", false);
+        }
+
+        if (crouch)
+        {
+            animator.SetBool("Crouch", true);
+        }
+
+        else
+        {
+            animator.SetBool("Crouch", false);
+        }
     }
 
     public void Jump()
