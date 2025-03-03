@@ -11,7 +11,7 @@ public class ItemInteractable : Interactable
 
     public override void Interact()
     {
-        Debug.Log("Trying to interact with an item");
+        Debug.Log("Trying to interact wit an item");
     }
 
 }
