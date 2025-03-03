@@ -9,6 +9,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(this.gameObject);
         interactables.Add(this);
     }
 

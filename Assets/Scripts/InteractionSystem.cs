@@ -47,6 +47,7 @@ public class InteractionSystem : MonoBehaviour
     {
         if (target != null)
         {
+            Debug.Log(this.gameObject);
             Debug.Log(target);
         }
     }
