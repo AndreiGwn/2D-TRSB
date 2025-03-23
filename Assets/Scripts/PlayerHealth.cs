@@ -4,8 +4,10 @@ public class PlayerHealth : MonoBehaviour
 {
     public float health;
     public float maxHealth;
+
+    // Placeholder function to modify health
     public void ChangeHealth(int amount)
     {
-        // This script mainly exists so I don't get compile errors in the ItemSO script
+        // Function exists to prevent compile errors
     }
 }

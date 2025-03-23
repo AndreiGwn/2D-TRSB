@@ -12,18 +12,28 @@ public class Item : MonoBehaviour
 
     void Start()
     {
+        // Find the InventoryManager in the scene
         InventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log($"Collided with {collision.gameObject.name}");
+
+        // If the player collides with the item, attempt to pick it up
+        if (collision.gameObject.CompareTag("Player"))
         {
             int leftOverItems = InventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-            if (leftOverItems <= 0) 
-                Destroy(gameObject);
+            if (leftOverItems <= 0)
+            {
+                Debug.Log("Item picked up: " + itemName);
+                Destroy(gameObject); // Remove item from the world
+            }
             else
-                quantity = leftOverItems;
+            {
+                Debug.Log("Items left over: " + leftOverItems);
+                quantity = leftOverItems; // Update remaining quantity
+            }
         }
     }
 }

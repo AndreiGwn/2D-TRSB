@@ -4,8 +4,10 @@ public class PlayerMana : MonoBehaviour
 {
     public float mana;
     public float maxMana;
+
+    // Placeholder function to modify mana
     public void ChangeMana(int amount)
     {
-        // This script mainly exists so I don't get compile errors in the ItemSO script
+        // Function exists to prevent compile errors
     }
 }

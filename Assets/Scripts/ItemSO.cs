@@ -1,15 +1,17 @@
 using UnityEngine;
 
+// Scriptable object for defining item properties and effects
 [CreateAssetMenu(fileName = "ItemSO", menuName = "Scriptable Objects/ItemSO")]
 public class ItemSO : ScriptableObject
 {
-    public string itemName;
-    public StatToChange statToChange = new StatToChange();
-    public int amountToChangeStat;
+    public string itemName; // Name of the item
+    public StatToChange statToChange = new StatToChange(); // Stat affected by this item
+    public int amountToChangeStat; // Amount by which the stat changes
 
-    public AttributeToChange attributeToChange = new AttributeToChange();
-    public int amountToChangeAttribute;
+    public AttributeToChange attributeToChange = new AttributeToChange(); // Attribute affected by this item
+    public int amountToChangeAttribute; // Amount by which the attribute changes
 
+    // Uses the item and applies its effect
     public bool UseItem()
     {
         if (statToChange == StatToChange.health)
@@ -17,7 +19,7 @@ public class ItemSO : ScriptableObject
             PlayerHealth playerHealth = GameObject.Find("HealthManager").GetComponent<PlayerHealth>();
             if (playerHealth.health == playerHealth.maxHealth)
             {
-                return false;
+                return false; // Can't use if at max health
             }
             else
             {
@@ -30,7 +32,7 @@ public class ItemSO : ScriptableObject
             PlayerMana playerMana = GameObject.Find("ManaManager").GetComponent<PlayerMana>();
             if (playerMana.mana == playerMana.maxMana)
             {
-                return false;
+                return false; // Can't use if at max mana
             }
             else
             {
@@ -41,6 +43,7 @@ public class ItemSO : ScriptableObject
         return false;
     }
 
+    // Enumeration of possible stats an item can affect
     public enum StatToChange
     {
         none,
@@ -49,6 +52,7 @@ public class ItemSO : ScriptableObject
         stamina
     };
 
+    // Enumeration of possible attributes an item can affect
     public enum AttributeToChange
     {
         none,
