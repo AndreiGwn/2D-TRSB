@@ -9,6 +9,8 @@ public class ItemInteractable : Interactable
 
     public Animator doorAnimator;
 
+    public Item item;
+
     public override void Interact()
     {
         Debug.Log("Trying to interact wit an item");
