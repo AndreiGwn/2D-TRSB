@@ -6,7 +6,7 @@ public class SceneController : MonoBehaviour
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene("Map-Player-Des");
+        SceneManager.LoadScene("ItemCollecting");
     }
 
     public void LoadMainMenu()
