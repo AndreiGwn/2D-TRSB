@@ -6,13 +6,13 @@ public class SceneController : MonoBehaviour
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene("Map-Player-Des");
     }
 
     public void LoadMainMenu()
     {
         // Replace "MainMenu" with your actual main menu scene name
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenuUI");
         // OR use the build index if you prefer
         // SceneManager.LoadScene(0);
     }

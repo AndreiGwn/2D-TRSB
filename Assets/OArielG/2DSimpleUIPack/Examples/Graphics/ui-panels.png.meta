@@ -1,10 +1,32 @@
 fileFormatVersion: 2
-guid: f4308c7fc5fff864d93a65dfd28d5e09
+guid: c902e08bd83e04947b6e8d7f31f385be
+AssetOrigin:
+  serializedVersion: 1
+  productId: 218050
+  packageName: 2D Simple UI Pack
+  packageVersion: 1.0
+  assetPath: Assets/OArielG/2DSimpleUIPack/Examples/Graphics/ui-panels.png
+  uploadId: 493490
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -183605167035722621
-    second: qubodup-loading2-ezgif.com-gif-to-sprite-converter_0
+      213: 2193479657588290036
+    second: ui-frames_0
+  - first:
+      213: -8929440768489705544
+    second: ui-frames_1
+  - first:
+      213: 2631046323181635569
+    second: ui-frames_2
+  - first:
+      213: 2976135448196196091
+    second: ui-frames_3
+  - first:
+      213: 4921545448054487618
+    second: ui-frames_4
+  - first:
+      213: 5136199020975286519
+    second: ui-frames_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +59,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +73,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,14 +90,14 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,10 +107,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,89 +122,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Loading-Sprite_0
+      name: ui-frames_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 6
-        width: 76
-        height: 65
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 6, z: 12, w: 5}
+      border: {x: 2, y: 2, z: 2, w: 3}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be4d24771261e84fb0c9e723d65c240
-      internalID: 150497383
+      spriteID: 4f17894802ec07e10800000000000000
+      internalID: 2193479657588290036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading-Sprite_1
+      name: ui-frames_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 6
-        width: 77
-        height: 65
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 12, y: 6, z: 11, w: 5}
+      border: {x: 2, y: 2, z: 2, w: 3}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8afa9d0e693e98b45bb979b4e6e46146
-      internalID: 1158199929
+      spriteID: 8bfa7476ee0441480800000000000000
+      internalID: -8929440768489705544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading-Sprite_2
+      name: ui-frames_2
       rect:
         serializedVersion: 2
-        x: 155
-        y: 6
-        width: 78
-        height: 65
+        x: 64
+        y: 32
+        width: 31
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 13, y: 6, z: 11, w: 5}
+      border: {x: 2, y: 2, z: 1, w: 3}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8d9c3b2648408644b03beb8ec2cfd89
-      internalID: -450652605
+      spriteID: 1f7c6d8e0ba538420800000000000000
+      internalID: 2631046323181635569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Loading-Sprite_3
+      name: ui-frames_3
       rect:
         serializedVersion: 2
-        x: 233
-        y: 6
-        width: 73
-        height: 65
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 13, y: 6, z: 6, w: 5}
+      border: {x: 2, y: 2, z: 2, w: 3}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f922b164b6051094aa8438498c56b3f0
-      internalID: 1654763586
+      spriteID: bf6ae210c6b5d4920800000000000000
+      internalID: 2976135448196196091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-frames_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 3}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a7a317287dc4440800000000000000
+      internalID: 4921545448054487618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui-frames_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 3}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8e0fcfbc1774740800000000000000
+      internalID: 5136199020975286519
       vertices: []
       indices: 
       edges: []
@@ -191,7 +257,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4906af27ea169034788cbc5e7dd61718
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -201,11 +267,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Loading-Sprite_0: 150497383
-      Loading-Sprite_1: 1158199929
-      Loading-Sprite_2: -450652605
-      Loading-Sprite_3: 1654763586
-      Loading-Sprite_4: -795708755
+      ui-frames_0: 2193479657588290036
+      ui-frames_1: -8929440768489705544
+      ui-frames_2: 2631046323181635569
+      ui-frames_3: 2976135448196196091
+      ui-frames_4: 4921545448054487618
+      ui-frames_5: 5136199020975286519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
