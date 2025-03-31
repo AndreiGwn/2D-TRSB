@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Battery
   m_EditorClassIdentifier: 
   itemName: Battery
-  statToChange: 0
-  amountToChangeStat: 0
-  attributeToChange: 0
-  amountToChangeAttribute: 0
+  statToChange: 1
+  amountToChangeStat: 10
+  attributeToChange: 4
+  amountToChangeAttribute: 40

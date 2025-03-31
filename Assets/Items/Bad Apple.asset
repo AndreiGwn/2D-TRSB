@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24824036efbf7134fb64409e328bbab0, type: 3}
-  m_Name: Coffee
+  m_Name: Bad Apple
   m_EditorClassIdentifier: 
-  itemName: Coffee
+  itemName: Bad Apple
   statToChange: 1
-  amountToChangeStat: 3
-  attributeToChange: 1
-  amountToChangeAttribute: 2
+  amountToChangeStat: -10
+  attributeToChange: 2
+  amountToChangeAttribute: -5

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // Scriptable object for defining item properties and effects
@@ -14,33 +15,31 @@ public class ItemSO : ScriptableObject
     // Uses the item and applies its effect
     public bool UseItem()
     {
-        if (statToChange == StatToChange.health)
+        // Check if the item affects a stat
+        if (statToChange != StatToChange.none)
         {
-            PlayerHealth playerHealth = GameObject.Find("HealthManager").GetComponent<PlayerHealth>();
-            if (playerHealth.health == playerHealth.maxHealth)
-            {
-                return false; // Can't use if at max health
-            }
-            else
-            {
-                playerHealth.ChangeHealth(amountToChangeStat);
-                return true;
-            }
+            // Apply the stat change
+            ApplyStatChange();
+            return true;
         }
-        if (statToChange == StatToChange.mana)
+        // Check if the item affects an attribute
+        if (attributeToChange != AttributeToChange.none)
         {
-            PlayerMana playerMana = GameObject.Find("ManaManager").GetComponent<PlayerMana>();
-            if (playerMana.mana == playerMana.maxMana)
-            {
-                return false; // Can't use if at max mana
-            }
-            else
-            {
-                playerMana.ChangeMana(amountToChangeStat);
-                return true;
-            }
+            // Apply the attribute change
+            ApplyAttributeChange();
+            return true;
         }
         return false;
+    }
+
+    private void ApplyStatChange()
+    {
+        Debug.Log($"Modifying {statToChange} by  {amountToChangeStat}");
+    }
+
+    private void ApplyAttributeChange()
+    {
+        Debug.Log($"Modifying {attributeToChange} by  {amountToChangeAttribute}");
     }
 
     // Enumeration of possible stats an item can affect
@@ -48,8 +47,6 @@ public class ItemSO : ScriptableObject
     {
         none,
         health,
-        mana,
-        stamina
     };
 
     // Enumeration of possible attributes an item can affect
@@ -58,7 +55,7 @@ public class ItemSO : ScriptableObject
         none,
         strength,
         defense,
-        intelligence,
+        stealth,
         agility
     };
 }

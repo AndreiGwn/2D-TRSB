@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Soda
   m_EditorClassIdentifier: 
   itemName: Soda
-  statToChange: 0
-  amountToChangeStat: 0
-  attributeToChange: 0
-  amountToChangeAttribute: 0
+  statToChange: 1
+  amountToChangeStat: -5
+  attributeToChange: 4
+  amountToChangeAttribute: 100
