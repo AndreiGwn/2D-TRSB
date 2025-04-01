@@ -6,12 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject player;
     public CharacterController characterController;
+    public InteractionSystem interactionSystem;
 
 
     private void Start()
     {
         if (characterController == null)
-        characterController = player.GetComponent<CharacterController>();
+            characterController = player.GetComponent<CharacterController>();
+
+        if(interactionSystem == null)
+            interactionSystem = this.gameObject.GetComponent<InteractionSystem>();
     }
 
     private void Update()
@@ -53,5 +57,8 @@ public class PlayerController : MonoBehaviour
     {
         player = target;
         characterController = target.GetComponent<CharacterController>();
+        interactionSystem.playerTransform = target.transform;
+        interactionSystem.player = player;
+
     }
 }
