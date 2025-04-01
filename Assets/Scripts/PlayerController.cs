@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject player;
     public CharacterController characterController;
-    private Chassis chassis;
 
-    private Rigidbody2D rb;
-    private Collider2D collider;
 
     private void Start()
     {
-        chassis = characterController.chassis;
-        rb = characterController.rb;
+        if (characterController == null)
+        characterController = player.GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -49,9 +47,11 @@ public class PlayerController : MonoBehaviour
 
         characterController.move = Input.GetAxisRaw("Horizontal");
     }
-
-    private void FixedUpdate()
+    
+    //Changes player to new body
+    public void HotSwap(GameObject target)
     {
-
+        player = target;
+        characterController = target.GetComponent<CharacterController>();
     }
 }
